@@ -14,4 +14,8 @@ setup(name = "testwriter",
                      "Development Status :: 2 - Pre-Alpha",
                      "Intended Audience :: Developers",
                      "Topic :: Software Development :: Testing",
-                     "Natural Language :: English",],)
+                     "Natural Language :: English",],
+      entry_points = """
+      [console_scripts]
+      testwriter = testwriter.testwriter:main
+      """,)
