@@ -36,26 +36,45 @@ def read_slug(filename):
 
     return slug
 
-class main():
+# class main():
+#     """
+#     Class that always gets instantiated when program is run
+#     """
+
+#     def __init__(self):
+
+#         parser = argparse.ArgumentParser(description = "Easily generate similar unit test methods.")
+
+#         parser.add_argument("slug",
+#             help = "Path to file containing test slug.")
+#         parser.add_argument("names",
+#             help = "Path to file containing names to be substituted into test slug.")
+
+#         args = parser.parse_args()
+
+#         names = read_names(args.names)
+#         slug = read_slug(args.slug)
+
+#         print tests_generator(slug, names)
+
+def main():
     """
     Class that always gets instantiated when program is run
     """
 
-    def __init__(self):
+    parser = argparse.ArgumentParser(description = "Easily generate similar unit test methods.")
 
-        parser = argparse.ArgumentParser(description = "Easily generate similar unit test methods.")
+    parser.add_argument("slug",
+        help = "Path to file containing test slug.")
+    parser.add_argument("names",
+        help = "Path to file containing names to be substituted into test slug.")
 
-        parser.add_argument("slug",
-            help = "Path to file containing test slug.")
-        parser.add_argument("names",
-            help = "Path to file containing names to be substituted into test slug.")
+    args = parser.parse_args()
 
-        args = parser.parse_args()
+    names = read_names(args.names)
+    slug = read_slug(args.slug)
 
-        names = read_names(args.names)
-        slug = read_slug(args.slug)
+    print tests_generator(slug, names)
 
-        print tests_generator(slug, names)
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
